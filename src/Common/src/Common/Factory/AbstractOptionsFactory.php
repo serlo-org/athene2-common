@@ -31,4 +31,3 @@ abstract class AbstractOptionsFactory implements FactoryInterface
      */
     abstract protected function getKeyName();
 }
- 
