@@ -21,12 +21,10 @@ trait EntityManagerAwareTrait
 
     /**
      * @param EntityManager $entityManager
-     * @return self
+     * @return void
      */
     public function setEntityManager(EntityManager $entityManager)
     {
         $this->entityManager = $entityManager;
-
-        return $this;
     }
 }

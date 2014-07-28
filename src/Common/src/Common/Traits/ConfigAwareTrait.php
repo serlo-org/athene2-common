@@ -11,13 +11,18 @@ use Zend\Stdlib\ArrayUtils;
  */
 trait ConfigAwareTrait
 {
-
+    /**
+     * @return array
+     */
     abstract protected function getDefaultConfig();
 
+    /**
+     * @var array
+     */
     protected $config = [];
 
     /**
-     * @return field_type $config
+     * @return array $config
      */
     public function getConfig()
     {
@@ -25,29 +30,27 @@ trait ConfigAwareTrait
     }
 
     /**
-     * @param field_type $config
-     * @return self
+     * @param array $config
+     * @return void
      */
     public function setConfig(array $config)
     {
         $this->config = ArrayUtils::merge($this->getDefaultConfig(), $config);
-
-        $array = [
-            $this->getDefaultConfig(),
-            $config,
-            $this->config
-        ];
-
-        return $this;
     }
 
+    /**
+     * @param array $config
+     * @return void
+     */
     public function appendConfig(array $config)
     {
         $this->config = ArrayUtils::merge($this->config, $config);
-
-        return $this;
     }
 
+    /**
+     * @param string $key
+     * @return mixed
+     */
     public function getOption($key)
     {
         if (array_key_exists($key, $this->getConfig())) {

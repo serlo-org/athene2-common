@@ -5,14 +5,13 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 trait ObjectManagerAwareTrait
 {
-
     /**
      * @var ObjectManager
      */
     protected $objectManager;
 
     /**
-     * @return \Doctrine\Common\Persistence\ObjectManager $objectManager
+     * @return  ObjectManager $objectManager
      */
     public function getObjectManager()
     {
@@ -20,13 +19,11 @@ trait ObjectManagerAwareTrait
     }
 
     /**
-     * @param \Doctrine\Common\Persistence\ObjectManager $objectManager
-     * @return self
+     * @param ObjectManager $objectManager
+     * @return void
      */
     public function setObjectManager(ObjectManager $objectManager)
     {
         $this->objectManager = $objectManager;
-
-        return $this;
     }
 }

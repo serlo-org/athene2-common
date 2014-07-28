@@ -1,20 +1,29 @@
 <?php
 namespace Common\Traits;
 
+use Doctrine\Common\Persistence\ObjectManager;
+
 trait FlushableTrait
 {
-
+    /**
+     * @return void
+     */
     public function flush()
     {
         $this->getObjectManager()->flush();
-
-        return $this;
     }
 
+    /**
+     * @param object $object
+     * @return void
+     */
     public function persist($object)
     {
         $this->getObjectManager()->persist($object);
-
-        return $this;
     }
+
+    /**
+     * @return ObjectManager
+     */
+    abstract public function getObjectManager();
 }
