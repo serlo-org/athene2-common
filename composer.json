@@ -29,7 +29,7 @@
         "zendframework/zend-validator": "~2.3",
         "doctrine/common": "~2.4",
         "doctrine/doctrine-module": "~0.8",
-        "zf-commons/zfc-rbac": ">2.3",
+        "zf-commons/zfc-rbac": ">=2.3",
         "doctrine/doctrine-orm-module": "~0.8"
     },
     "require-dev": {
